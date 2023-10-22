@@ -53,10 +53,10 @@ To properly use the library, ensure you've set up the following configurations:
 
 MJML API Authentication:
 
-- mjml.appId: Your MJML API App ID.
-- mjml.appSecret: Your MJML API App Secret.
+- `mjml.app-id`: Your MJML API App ID.
+- `mjml.app-secret`: Your MJML API App Secret.
 
-You can configure these in your application.properties or application.yml file:
+You can configure these in your `application.properties` or `application.yml` file:
 
 ```yml
 mjml:
@@ -66,7 +66,7 @@ mjml:
 
 ## Usage
 
-By default, the library expects your MJML templates to be located in the resources/templates directory of your project.
+By default, the library expects your MJML templates to be located in the `resources/templates` directory of your project.
 
 There are two primary ways to use the library for converting MJML templates to HTML:
 
@@ -83,7 +83,7 @@ params.put("key2", "value2");
 // Add more parameters as needed...
 ```
 
-2. Build the MjmlRequest with the template name and parameters:
+2. Build the `MjmlRequest` with the template name and parameters:
 
 ```java
 MjmlRequest mjmlRequest = mjmlRequestBuilder.build("your-template-name.mjml", params);
@@ -100,7 +100,7 @@ String htmlContent = htmlResponse.getHtml();
 
 For MJML templates that don't require dynamic content:
 
-1. Build the MjmlRequest with just the template name:
+1. Build the `MjmlRequest` with just the template name:
 
 ```java
 MjmlRequest mjmlRequest = mjmlRequestBuilder.build("your-template-name.mjml");
@@ -113,7 +113,7 @@ HtmlResponse htmlResponse = mjmlConverter.convert(mjmlRequest);
 String htmlContent = htmlResponse.getHtml();
 ```
 
-Replace placeholders like your-template-name.mjml, key1, and value1 with your actual template names and parameters as appropriate. Adjust the instructions as needed based on your specific use case.
+Replace placeholders like `your-template-name.mjml`, `key1`, and `value1` with your actual template names and parameters as appropriate. Adjust the instructions as needed based on your specific use case.
 
 ## License
 
