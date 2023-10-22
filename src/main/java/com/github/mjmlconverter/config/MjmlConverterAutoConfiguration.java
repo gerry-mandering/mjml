@@ -1,5 +1,6 @@
 package com.github.mjmlconverter.config;
 
+import com.github.mjmlconverter.builder.MjmlRequestBuilder;
 import com.github.mjmlconverter.converter.MjmlConverter;
 import com.github.mjmlconverter.converter.MjmlConverterImpl;
 import com.github.mjmlconverter.template.TemplateCompiler;
@@ -21,6 +22,12 @@ public class MjmlConverterAutoConfiguration {
     @ConditionalOnMissingBean
     public MjmlConverter mjmlConverter(MjmlProperties properties, RestTemplate restTemplate) {
         return new MjmlConverterImpl(properties, restTemplate);
+    }
+
+    @Bean
+    @ConditionalOnMissingBean
+    public MjmlRequestBuilder mjmlRequestBuilder(TemplateCompiler templateCompiler, TemplateLoader templateLoader) {
+        return new MjmlRequestBuilder(templateCompiler, templateLoader);
     }
 
     @Bean
