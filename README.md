@@ -114,3 +114,7 @@ String htmlContent = htmlResponse.getHtml();
 ```
 
 Replace placeholders like your-template-name.mjml, key1, and value1 with your actual template names and parameters as appropriate. Adjust the instructions as needed based on your specific use case.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
