@@ -60,8 +60,8 @@ You can configure these in your application.properties or application.yml file:
 
 ```yml
 mjml:
-  appId: YOUR_APP_ID
-  appSecret: YOUR_APP_SECRET
+  app-id: YOUR_APP_ID
+  app-secret: YOUR_APP_SECRET
 ```
 
 ## Usage
