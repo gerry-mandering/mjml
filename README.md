@@ -24,7 +24,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.gerry-mandering:mjml.converter:Tag'
+    implementation 'com.github.gerry-mandering:mjml.converter:1.0.0'
 }
 ```
 
@@ -43,7 +43,7 @@ Add the following to your `pom.xml`:
 <dependency>
     <groupId>com.github.gerry-mandering</groupId>
     <artifactId>mjml.converter</artifactId>
-    <version>Tag</version>
+    <version>1.0.0</version>
 </dependency>
 ```
 
