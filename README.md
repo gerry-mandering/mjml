@@ -68,6 +68,18 @@ mjml:
 
 By default, the library expects your MJML templates to be located in the `resources/templates` directory of your project.
 
+### Injecting the Service
+
+To use the `mjml.converter` library in your Spring application, first inject the `MjmlRequestBuilder` and `MjmlConverter` by using the `@Autowired` annotation:
+
+```java
+@Autowired
+private MjmlRequestBuilder mjmlRequestBuilder;
+
+@Autowired
+private MjmlConverter mjmlConverter;
+```
+
 There are two primary ways to use the library for converting MJML templates to HTML:
 
 ### 1. Compile MJML Templates with Parameters
