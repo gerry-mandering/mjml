@@ -14,6 +14,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * Spring Boot auto-configuration class for the MJML converter components.
+ * This class contains bean definitions that are conditionally created only if they don't already exist in the context.
+ */
 @Configuration
 @EnableConfigurationProperties(MjmlProperties.class)
 public class MjmlConverterAutoConfiguration {

@@ -12,13 +12,28 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import java.util.Map;
 
+/**
+ * Service implementation of the TemplateCompiler interface.
+ * This class compiles provided templates using Mustache templating engine and produces MJML requests.
+ */
 @Service
 @RequiredArgsConstructor
 public class TemplateCompilerImpl implements TemplateCompiler {
 
+    // Responsible for loading templates from specified locations.
     private final TemplateLoader templateLoader;
+
+    // Factory used to create and compile Mustache templates.
     private final MustacheFactory mustacheFactory = new DefaultMustacheFactory();
 
+    /**
+     * Compiles the provided template with the given parameters and returns an MJML request.
+     *
+     * @param templateName The name of the template to be compiled.
+     * @param params       Parameters to be used in the template.
+     * @return Compiled MjmlRequest.
+     * @throws IOException In case of any issues while reading or compiling the template.
+     */
     public MjmlRequest compile(String templateName, Map<String, Object> params) throws IOException {
         String template = templateLoader.loadTemplate(templateName);
         Mustache mustache = mustacheFactory.compile(new StringReader(template), templateName);
