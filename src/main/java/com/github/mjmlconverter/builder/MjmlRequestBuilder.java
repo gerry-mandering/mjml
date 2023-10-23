@@ -47,7 +47,7 @@ public class MjmlRequestBuilder {
             throw new IllegalArgumentException("Template name must be provided.");
         }
 
-        if (params.isEmpty()) {
+        if (params == null || params.isEmpty()) {
             String template = templateLoader.loadTemplate(templateName);
             return new MjmlRequest(template);
         } else {
