@@ -1,1 +1,2 @@
 com.github.mjmlconverter.config.MjmlConverterAutoConfiguration
+com.github.mjmlconverter.config.MjmlClientConfig

@@ -14,5 +14,4 @@ public class MjmlRequest {
 
     // The MJML content to be converted.
     private String mjml;
-
 }
