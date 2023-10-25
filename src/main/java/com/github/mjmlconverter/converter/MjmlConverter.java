@@ -15,5 +15,4 @@ public interface MjmlConverter {
      * @return The converted HTML response.
      */
     HtmlResponse convert(MjmlRequest mjmlRequest);
-
 }

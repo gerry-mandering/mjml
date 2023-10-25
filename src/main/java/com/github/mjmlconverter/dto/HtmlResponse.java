@@ -16,5 +16,4 @@ public class HtmlResponse {
 
     // The converted HTML content.
     private String html;
-
 }

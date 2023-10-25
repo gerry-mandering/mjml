@@ -13,15 +13,27 @@ import org.springframework.web.reactive.function.client.support.WebClientAdapter
 import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 import reactor.core.publisher.Mono;
 
+
+/**
+ * Configuration class responsible for setting up the MJML client with necessary configurations
+ * to communicate with the MJML API.
+ *
+ * It integrates Spring's WebClient with the MJML service to render MJML templates into HTML.
+ */
 @Configuration
 @RequiredArgsConstructor
 @EnableConfigurationProperties(MjmlProperties.class)
 public class MjmlClientConfig {
 
+    private static final String MJML_API_ENDPOINT = "https://api.mjml.io/v1";
     private final MjmlProperties properties;
 
-    private static final String MJML_API_ENDPOINT = "https://api.mjml.io/v1";
-
+    /**
+     * Creates and configures the MJML client bean for rendering MJML templates.
+     * It initializes a WebClient with default headers, error handling, and the MJML API endpoint.
+     *
+     * @return The configured MjmlClient bean ready to communicate with the MJML API.
+     */
     @Bean
     public MjmlClient mjmlClient() {
         WebClient client = WebClient.builder()
