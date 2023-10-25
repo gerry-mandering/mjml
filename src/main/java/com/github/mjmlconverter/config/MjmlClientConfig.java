@@ -1,6 +1,7 @@
 package com.github.mjmlconverter.config;
 
 import com.github.mjmlconverter.client.MjmlClient;
+import com.github.mjmlconverter.exception.MjmlConversionException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -29,7 +30,7 @@ public class MjmlClientConfig {
                                        httpHeaders.setBasicAuth(properties.getAppId(), properties.getAppSecret());
                                    })
                                    .defaultStatusHandler(HttpStatusCode::isError, response ->
-                                                                                          Mono.just(new RuntimeException("Error from MJML API: " + response.bodyToMono(String.class))))
+                                                                                          Mono.just(new MjmlConversionException("Error from MJML API: " + response.bodyToMono(String.class))))
                                    .baseUrl(MJML_API_ENDPOINT)
                                    .build();
         HttpServiceProxyFactory factory = HttpServiceProxyFactory.builder(WebClientAdapter.forClient(client))
